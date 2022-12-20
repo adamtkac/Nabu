@@ -20,6 +20,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.jpkhawam.nabu.util.EspressoIdlingResource;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    private void showFirstStartUpDialog() {
+    protected void showFirstStartUpDialog() {
         new MaterialAlertDialogBuilder(this).setTitle(R.string.accessibility_settings).setMessage(R.string.accessibility_prompt).setPositiveButton(R.string.Yes, (dialogInterface, i) -> startActivity(new Intent(MainActivity.this, SettingsActivity.class))).setNegativeButton(R.string.No, (dialogInterface, i) -> dialogInterface.dismiss()).create().show();
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         // Change firstStartUp SharedPreferences To False
@@ -176,10 +177,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
+        EspressoIdlingResource.increment();
         finishAndRemoveTask();
         Intent homeIntent = new Intent(Intent.ACTION_MAIN);
         homeIntent.addCategory(Intent.CATEGORY_HOME);
         homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(homeIntent);
+        EspressoIdlingResource.decrement();
     }
 }
