@@ -1,3 +1,5 @@
+[![Android CI](https://github.com/adamtkac/Nabu/actions/workflows/android-ci.yml/badge.svg)](https://github.com/adamtkac/Nabu/actions/workflows/android-ci.yml)
+
 # Nabu - An Offline Note Taking App
 
 <a href="https://apt.izzysoft.de/fdroid/index/apk/com.jpkhawam.nabu"><img src="https://github.com/jpkhawam/Nabu/blob/main/assets/IzzyOnDroid.png" width="300px"></a>
