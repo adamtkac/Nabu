@@ -54,7 +54,7 @@ public class DataBaseHelperTest {
      * Assert that content of simple notes matches note returned from DB.
      */
     @Test
-    public void addOneSimpleNote() {
+    public void test_AddNoteWithSetter() {
         Note note = new Note();
         note.setTitle("Title");
         note.setContent("Simple note for testing!");
@@ -67,7 +67,7 @@ public class DataBaseHelperTest {
      * Assert that content of simple notes matches note returned from DB.
      */
     @Test
-    public void addNote() {
+    public void test_AddNote() {
         Note note = new Note(1, "Title", "Simple note for testing!",
                 LocalDateTime.now(), LocalDateTime.now());
         long noteID = dbhelper.addNote(note);
@@ -79,7 +79,7 @@ public class DataBaseHelperTest {
      * Assert that DB returns two items.
      */
     @Test
-    public void addSomeSimpleNotes() {
+    public void test_AddMultipleNotes() {
         Note note1 = new Note();
         note1.setTitle("Note 1 title");
         note1.setContent("This is content of note nr.1");
@@ -95,7 +95,7 @@ public class DataBaseHelperTest {
      * Assert that returned note content matches with setContent string.
      */
     @Test
-    public void getNoteFromDB() {
+    public void test_GetNote() {
         Note note1 = new Note();
         note1.setTitle("Note 1 title");
         note1.setContent("This is content of note nr.1");
@@ -112,7 +112,7 @@ public class DataBaseHelperTest {
      * Assert that returned note content matches with setContent string.
      */
     @Test
-    public void updateNoteFromDB() {
+    public void test_UpdateNote() {
         Note note1 = new Note();
         note1.setTitle("Note 1 title");
         note1.setContent("This is content of note nr.1");
@@ -135,7 +135,7 @@ public class DataBaseHelperTest {
      * Assert that notes_table is empty and trash has one item.
      */
     @Test
-    public void deleteNote() {
+    public void test_DeleteNote() {
         Note note1 = new Note();
         note1.setTitle("Note 1 title");
         note1.setContent("Simple note for testing! Nr.1");

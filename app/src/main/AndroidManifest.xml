@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_nabu_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nabu">
-        <!--<profileable android:shell="true"/>-->
+        <profileable android:shell="true"/>
         <activity
             android:name="com.jpkhawam.nabu.SettingsActivity"
             android:exported="false" />

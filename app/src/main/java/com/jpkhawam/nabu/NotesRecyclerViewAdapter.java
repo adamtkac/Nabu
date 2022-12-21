@@ -325,8 +325,8 @@ public class NotesRecyclerViewAdapter extends RecyclerView.Adapter<NotesRecycler
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView noteTitle;
-        private final TextView noteContent;
+        final TextView noteTitle;
+        final TextView noteContent;
         private final MaterialCardView materialCardView;
 
         public ViewHolder(@NonNull View itemView) {

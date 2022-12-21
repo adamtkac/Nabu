@@ -49,7 +49,7 @@ public class EspressoScenarioUITest {
     }
 
     @Test
-    public void test1_firstRunTryTest() {
+    public void test1_FirstRunTest() {
         try {
             onView(withResourceName("alertTitle")).check(doesNotExist());
         } catch (AssertionFailedError error) {
@@ -59,7 +59,7 @@ public class EspressoScenarioUITest {
     }
 
     @Test
-    public void test2_addNoteTest() {
+    public void test2_AddNoteTest() {
         String testTitle = "Test note tile";
         String testContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit." +
                 "Nulla ut ex iaculis, blandit velit eu, euismod ipsum. ";
@@ -81,7 +81,7 @@ public class EspressoScenarioUITest {
     }
 
     @Test
-    public void test3_deleteNoteTest() {
+    public void test3_DeleteNoteTest() {
         onView(withId(R.id.mainLayout)).check(matches(isDisplayed()));
         onView(withId(R.id.notesRecyclerView)).check(matches(isDisplayed()));
         onView(withId(R.id.notesRecyclerView)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
@@ -95,7 +95,7 @@ public class EspressoScenarioUITest {
     }
 
     @Test
-    public void test4_emptyTrashTest() {
+    public void test4_EmptyTrashTest() {
         onView(withId(R.id.mainLayout)).check(matches(isDisplayed()));
         onView(withResourceName("main_toolbar")).check(matches(isDisplayed()));
         onView(withContentDescription("Navigation Drawer Open")).perform(click());
