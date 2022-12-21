@@ -14,16 +14,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run Android Tests
-        uses: reactivecircus/android-emulator-runner@v3
+        uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 33
+          api-level: 29
           script: ./gradlew connectedAndroidTest
-      - name: Upload Android Test Reports
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v3
-        with:
-          name: android-test-reports
-          path: ‘**/build/reports/androidTests/’
 
   build_job:
     name: Build
